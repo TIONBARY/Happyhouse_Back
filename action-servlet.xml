@@ -4,4 +4,6 @@
 	<bean id="regist" class="web.controller.UserRegistController"></bean>
 	<bean id="logout" class="web.controller.LogoutController"></bean>
 	<bean id="userinfo" class="web.controller.UserInfoController"></bean>
+	<bean id="useredit" class="web.controller.UserEditController"></bean>
+	<bean id="userremove" class="web.controller.UserRemoveController"></bean>
 </beans>

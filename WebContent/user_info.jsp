@@ -70,10 +70,10 @@
 					<%
 					session = request.getSession(); 
 					%>
-					<p>아이디 : <input type=text value="<%=session.getAttribute("userid") %>" id=user_info_id ></p>
+					<p>아이디 : <input type=text value="<%=session.getAttribute("userid") %>" id=user_info_id disabled></p>
 					<p>비밀번호 : <input type=password value="<%=session.getAttribute("userpw") %>" id=user_info_password></p>
-					<p>이름 : <input type=text value="<%=session.getAttribute("useremail") %>" id=user_info_name></p>
-					<p>이메일 : <input type=text value="<%=session.getAttribute("username") %>" id=user_info_email></p>
+					<p>이름 : <input type=text value="<%=session.getAttribute("username") %>" id=user_info_name disabled></p>
+					<p>이메일 : <input type=text value="<%=session.getAttribute("useremail") %>" id=user_info_email></p>
 					<p>나이 : <input type=text value="<%=session.getAttribute("userage") %>" id=user_info_age></p>
 					</div>
 					<div class="user_info_button">

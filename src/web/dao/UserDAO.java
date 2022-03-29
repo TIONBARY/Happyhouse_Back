@@ -95,4 +95,55 @@ public class UserDAO {
 			throw new MyException("login 실패");
 		}
 	}
+
+	public void userEdit(UserVO userVO) throws MyException{
+		try(Connection con = ds.getConnection()){
+			String sql = "UPDATE user SET pw = ?, email = ?, name = ?, age = ? WHERE (id = ?)";
+			PreparedStatement stmt = con.prepareStatement(sql);
+			stmt.setString(1, userVO.getPw());
+			stmt.setString(2, userVO.getEmail());
+			stmt.setString(3, userVO.getName());
+			stmt.setInt(4, userVO.getAge());
+			stmt.setString(5, userVO.getId());
+			
+			int i = stmt.executeUpdate();
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+			throw new MyException("login 실패");
+		}
+	}
+
+	public void userRemove(String id) throws MyException{
+		try(Connection con = ds.getConnection()){
+			String sql = "DELETE FROM user WHERE (id = ?);";
+			PreparedStatement stmt = con.prepareStatement(sql);
+			stmt.setString(1, id);
+			
+			int i = stmt.executeUpdate();
+			System.out.println(i+"번째 행 삭제"+ id);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new MyException("회원 탈퇴 실패");
+		}
+		
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

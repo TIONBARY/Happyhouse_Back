@@ -62,29 +62,29 @@ $(document).ready(function () {
 	});
 
 	$("#user_info_button_edit").click(function () {
-		let id = $("#user_info_id").val();
-		let password = $("#user_info_password").val();
-		let name = $("#user_info_name").val();
-		let email = $("#user_info_email").val();
-		let age = $("#user_info_age").val();
+		let user_info_id = $("#user_info_id").val();
+		let user_info_password = $("#user_info_password").val();
+		let user_info_name = $("#user_info_name").val();
+		let user_info_email = $("#user_info_email").val();
+		let user_info_age = $("#user_info_age").val();
+		
+		$.post("main",{user_info_id,user_info_password,user_info_name,user_info_email,user_info_age, sign:"useredit"}, function(){
+		})
+		
+		
 
-		const user = {
-				id: id,
-				password: password,
-				name: name,
-				email: email,
-				age: age,
-		};
-
-		localStorage.setItem(id, JSON.stringify(user));
+		
 		alert("회원정보 수정");
 		location.href = "index.jsp";
 	});
 	
 	$("#user_info_button_remove").click(function () {
-		$.removeCookie("id");
+		let user_info_id = $("#user_info_id").val();
+		$.post("main",{user_info_id, sign:"userremove"}, function(){
+		})
 		
-		alert(user_info.id + "님 회원탈퇴하셨습니다.");
+		alert("회원탈퇴하셨습니다.");
+		$.removeCookie("name");
 		location.href = "index.jsp";
 	});
 });
