@@ -7,7 +7,7 @@ pair1
 ![image info](usecasediagram.png)
 
 ## Class diagram
-
+![image info](classdiagram.png)
 
 ## 결과화면
 <h4>-로그인 전 메인페이지<br/><h4/>
