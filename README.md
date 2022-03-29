@@ -3,7 +3,7 @@
 pair1
 김시언 김성진
 
-## 요구사항
+## Usecase diagram
 <table class="table table-bordered">
     <thead>
       <tr>
@@ -39,7 +39,7 @@ pair1
   </table>
 
 
-## 구조
+## Class diagram
 | HTML |  |
 | ------ | ------ |
 | index.html | 메인페이지 |
